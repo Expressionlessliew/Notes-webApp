@@ -1,0 +1,23 @@
+.navbar {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.navbar .logo {
+    font-size: 20px;
+}
+
+.navbar .user-info {
+    font-size: 16px;
+}
+
+.navbar .logout-btn {
+    background-color: #ccc;
+    border: none;
+    color: #333;
+    padding: 5px 10px;
+    cursor: pointer;
+}
