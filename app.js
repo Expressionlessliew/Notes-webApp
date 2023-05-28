@@ -1,6 +1,6 @@
 const Login = document.getElementById("login");
 
-Login.addEventListener("Save", (e) => {
+Login.addEventListener("submit", (e) => {
   e.preventDefault();
   const email = document.getElementById("emailInput").value;
   const password = document.getElementById("passwordInput").value;
