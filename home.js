@@ -26,7 +26,6 @@ firebase.auth().onAuthStateChanged(function (user) {
       document.getElementById("userInfo").textContent =
         "Welcome, " + displayName;
     } else {
-      document.getElementById("WelcomeName").textContent = "";
       document.getElementById("userInfo").textContent = "";
     }
   } else {
@@ -50,4 +49,78 @@ document.getElementById("logoutBtn").addEventListener("click", function () {
       // An error happened
       console.log(error.message);
     });
+});
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const monthYear = document.getElementById("monthYear");
+const daysContainer = document.querySelector(".days");
+const calendarContainer = document.querySelector(".calendar");
+
+let currentDate = new Date();
+
+function renderCalendar() {
+  const currentMonth = currentDate.getMonth();
+  const currentYear = currentDate.getFullYear();
+
+  // Set the month and year in the header
+  monthYear.textContent = new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    year: "numeric",
+  }).format(currentDate);
+
+  // Clear the existing days
+  daysContainer.innerHTML = "";
+
+  // Get the first day of the month
+  const firstDay = new Date(currentYear, currentMonth, 1);
+  const startingDay = firstDay.getDay();
+
+  // Get the number of days in the month
+  const lastDay = new Date(currentYear, currentMonth + 1, 0);
+  const totalDays = lastDay.getDate();
+
+  // Render the days
+  for (let i = 0; i < startingDay; i++) {
+    const emptyDay = document.createElement("div");
+    daysContainer.appendChild(emptyDay);
+  }
+
+  for (let i = 1; i <= totalDays; i++) {
+    const day = document.createElement("div");
+    day.textContent = i;
+    daysContainer.appendChild(day);
+  }
+
+  // Assign color class based on the current month
+  const colorClasses = [
+    "january",
+    "february",
+    "march",
+    "april",
+    "may",
+    "june",
+    "july",
+    "august",
+    "september",
+    "october",
+    "november",
+    "december",
+  ];
+  calendarContainer.className = "calendar";
+  calendarContainer.classList.add(colorClasses[currentMonth]);
+}
+
+// Render the initial calendar
+renderCalendar();
+
+// Previous month button click event
+prevBtn.addEventListener("click", () => {
+  currentDate.setMonth(currentDate.getMonth() - 1);
+  renderCalendar();
+});
+
+// Next month button click event
+nextBtn.addEventListener("click", () => {
+  currentDate.setMonth(currentDate.getMonth() + 1);
+  renderCalendar();
 });

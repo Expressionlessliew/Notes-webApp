@@ -1,23 +1,105 @@
 .navbar {
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .navbar .logo {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .navbar .user-info {
-    font-size: 16px;
+  font-size: 50px;
 }
 
 .navbar .logout-btn {
-    background-color: #ccc;
-    border: none;
-    color: #333;
-    padding: 5px 10px;
-    cursor: pointer;
+  background-color: #ccc;
+  border: none;
+  color: #333;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.calendar {
+  width: 300px;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.weekdays {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 10px;
+}
+
+.days div {
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+#prevBtn,
+#nextBtn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.calendar.january {
+  background-color: lightblue;
+}
+
+.calendar.february {
+  background-color: lightgreen;
+}
+.calendar.march {
+  background-color: rgb(8, 0, 255);
+}
+
+.calendar.april {
+  background-color: tomato;
+}
+.calendar.may {
+  background-color:aqua;
+}
+
+.calendar.june {
+  background-color: rgb(255, 9, 218);
+}
+.calendar.july {
+  background-color: rgb(245, 249, 0);
+}
+
+.calendar.august {
+  background-color:aquamarine;
+}
+.calendar.september {
+  background-color:crimson;
+}
+
+.calendar.october {
+  background-color:darkorange;
+}
+.calendar.november {
+  background-color:chocolate;
+}
+
+.calendar.december {
+  background-color:bisque;
 }
