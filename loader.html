@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Loader</title>
+    <style>
+      .loader2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .loader2 img {
+        animation: spin 2s linear infinite;
+        width: 300px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader2"id="loader2">
+      <img
+        src="png-clipart-planet-sticker-moon-picsart-studio-planet-love-miscellaneous-thumbnail.jpg"
+        alt="Cute Picture"
+      />
+    </div>
+    <script>
+   function startLoader() {
+  const loader = document.getElementById('loader2');
+  const image = loader.querySelector('img');
+
+  let rotation = 0;
+  setInterval(() => {
+    rotation += 360;
+    image.style.transform = `rotate(${rotation}deg)`;
+  }, 2000);
+
+  setTimeout(() => {
+    loader.style.display = 'none';
+    window.location.href = 'home.html'; // Replace with the desired website URL
+  }, 5000);
+}
+
+startLoader();
+    </script>
+  </body>
+</html>

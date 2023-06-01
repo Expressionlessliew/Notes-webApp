@@ -10,7 +10,7 @@ Login.addEventListener("submit", (e) => {
     .signInWithEmailAndPassword(email, password)
     .then(() => {
         console.log('successful.login');
-      window.location.href = "home.html";
+      window.location.href = "loader.html";
     })
     .catch((error) => {
       alert(error.message);
