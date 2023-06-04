@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Dongle:wght@700&family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Dancing+Script&family=Dongle:wght@700&family=Roboto:wght@900&display=swap');
+
 body {
   background-color: #B8E2F2;
 }
@@ -110,7 +113,8 @@ body {
 
 
 .todo-widget {
-  background-color: #f5f5f5;
+  font-family: 'Bruno Ace', cursive;;
+  background-color: #B8E2F2;
   padding: 10px;
   border-radius: 5px;
 }
@@ -126,7 +130,7 @@ body {
 }
 
 #add-task-btn {
-  background-color: #4CAF50;
+  background-color: #6a4caf;
   color: white;
   border: none;
   padding: 5px 10px;
