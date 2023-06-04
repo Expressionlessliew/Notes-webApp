@@ -19,6 +19,7 @@ body {
 
 .navbar .user-info {
   font-size: 30px;
+  font-family: 'Dancing Script', cursive;
 }
 
 .navbar .logout-btn {
