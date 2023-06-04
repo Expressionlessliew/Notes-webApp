@@ -21,8 +21,6 @@ firebase.auth().onAuthStateChanged(function (user) {
 
     // User is signed in
     if (displayName) {
-      document.getElementById("WelcomeName").textContent =
-        "Welcome, " + displayName;
       document.getElementById("userInfo").textContent =
         "Welcome, " + displayName;
     } else {
@@ -30,7 +28,6 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
   } else {
     // No user is signed in
-    document.getElementById("WelcomeName").textContent = "";
     document.getElementById("userInfo").textContent = "";
     localStorage.removeItem("user");
   }
@@ -124,3 +121,46 @@ nextBtn.addEventListener("click", () => {
   currentDate.setMonth(currentDate.getMonth() + 1);
   renderCalendar();
 });
+
+const todoList = document.getElementById("todo-list");
+const newTaskInput = document.getElementById("new-task-input");
+const addTaskBtn = document.getElementById("add-task-btn");
+
+// Load tasks from local storage
+function loadTasks() {
+  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  tasks.forEach((task) => createTaskItem(task));
+}
+
+// Save tasks to local storage
+// take data, save it into tasks
+function saveTasks(tasks) {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+// Create a new task item
+function createTaskItem(taskText) {
+  const taskItem = document.createElement("li");
+  taskItem.textContent = taskText;
+  todoList.appendChild(taskItem);
+}
+
+// Add a new task
+function addTask() {
+  const taskText = newTaskInput.value;
+  if (taskText.trim() !== "") {
+    createTaskItem(taskText);
+
+    // Save the task to local storage
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks.push(taskText);
+    saveTasks(tasks);
+
+    newTaskInput.value = "";
+  }
+}
+
+addTaskBtn.addEventListener("click", addTask);
+
+// Load tasks on page load
+document.addEventListener("DOMContentLoaded", loadTasks);
