@@ -47,80 +47,67 @@ document.getElementById("logoutBtn").addEventListener("click", function () {
       console.log(error.message);
     });
 });
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-const monthYear = document.getElementById("monthYear");
-const daysContainer = document.querySelector(".days");
-const calendarContainer = document.querySelector(".calendar");
 
-let currentDate = new Date();
+// Calendar
+const calendar = document.getElementById('calendar');
+const calendarHeader = document.getElementById('calendar-header')
 
-function renderCalendar() {
-  const currentMonth = currentDate.getMonth();
-  const currentYear = currentDate.getFullYear();
+// Get the current date
+const currentDate = new Date();
 
-  // Set the month and year in the header
-  monthYear.textContent = new Intl.DateTimeFormat("en-US", {
-    month: "long",
-    year: "numeric",
-  }).format(currentDate);
+// Get the current month and year
+const currentMonth = currentDate.getMonth();
+const currentYear = currentDate.getFullYear();
 
-  // Clear the existing days
-  daysContainer.innerHTML = "";
+// Create an array of month names
+const monthNames = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
 
-  // Get the first day of the month
-  const firstDay = new Date(currentYear, currentMonth, 1);
-  const startingDay = firstDay.getDay();
+// Function to generate the calendar for a given month and year
+function generateCalendar(month, year) {
+  // Get the number of days in the specified month and year
+  const totalDays = new Date(year, month + 1, 0).getDate();
 
-  // Get the number of days in the month
-  const lastDay = new Date(currentYear, currentMonth + 1, 0);
-  const totalDays = lastDay.getDate();
+  // Get the index of the first day of the month (0 - Sunday, 1 - Monday, ...)
+  const firstDayIndex = new Date(year, month, 1).getDay();
 
-  // Render the days
-  for (let i = 0; i < startingDay; i++) {
-    const emptyDay = document.createElement("div");
-    daysContainer.appendChild(emptyDay);
+  // Clear the calendar
+  calendar.innerHTML = '';
+
+  // Create the calendar header
+  calendarHeader.innerHTML = monthNames[month] + ' ' + year;
+
+  // Create the calendar days
+  for (let i = 0; i < totalDays + firstDayIndex; i++) {
+    const day = document.createElement('div');
+    day.classList.add('day');
+
+    // Calculate the day number
+    const dayNumber = i - firstDayIndex + 1;
+
+    // Set the day number if it falls within the current month
+    if (i >= firstDayIndex) {
+      day.textContent = dayNumber;
+
+      // Highlight the current day
+      if (
+        dayNumber === currentDate.getDate() &&
+        month === currentDate.getMonth() &&
+        year === currentDate.getFullYear()
+      ) {
+        day.classList.add('today');
+      }
+    }
+
+    calendar.appendChild(day);
   }
-
-  for (let i = 1; i <= totalDays; i++) {
-    const day = document.createElement("div");
-    day.textContent = i;
-    daysContainer.appendChild(day);
-  }
-
-  // Assign color class based on the current month
-  const colorClasses = [
-    "january",
-    "february",
-    "march",
-    "april",
-    "may",
-    "june",
-    "july",
-    "august",
-    "september",
-    "october",
-    "november",
-    "december",
-  ];
-  calendarContainer.className = "calendar";
-  calendarContainer.classList.add(colorClasses[currentMonth]);
 }
 
-// Render the initial calendar
-renderCalendar();
+// Generate the calendar for the current month and year
+generateCalendar(currentMonth, currentYear);
 
-// Previous month button click event
-prevBtn.addEventListener("click", () => {
-  currentDate.setMonth(currentDate.getMonth() - 1);
-  renderCalendar();
-});
-
-// Next month button click event
-nextBtn.addEventListener("click", () => {
-  currentDate.setMonth(currentDate.getMonth() + 1);
-  renderCalendar();
-});
 
 const todoList = document.getElementById("todo-list");
 const newTaskInput = document.getElementById("new-task-input");
@@ -189,7 +176,4 @@ addTaskBtn.addEventListener("click", addTask);
 clearAllBtn.addEventListener("click", clearAllTasks);
 
 // Load tasks on page load
-document.addEventListener("DOMContentLoaded", loadTasks);
-
-
-     
+document.addEventListener("DOMContentLoaded", loadTasks); 
