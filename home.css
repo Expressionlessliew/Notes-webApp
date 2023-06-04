@@ -4,6 +4,8 @@
 body {
   background-color: #B8E2F2;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0px;
+  margin: 0px;
 }
 
 .navbar {
@@ -35,12 +37,21 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
+.dashboard-container {
+  display: flex;
+}
+
+.todo-list, .calendar-widget {
+  flex: 1;
+}
+
 .todo-widget {
   font-family: 'Bruno Ace', cursive;
-  ;
-  background-color: #B8E2F2;
+  background-color: pink;
   padding: 10px;
-  border-radius: 5px;
+  width: 500px;
+  display: inline-block;
+
 }
 
 .todo-widget h2 {
