@@ -186,7 +186,7 @@ clearAllBtn.addEventListener("click", clearAllTasks);
 
 // Load tasks on page load
 // document.addEventListener("DOMContentLoaded", loadTasks);
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   loadTasks();
   weather();
   // Call other functions here
@@ -196,10 +196,12 @@ document.addEventListener("DOMContentLoaded", function() {
 function weather() {
   const dataContainer = document.getElementById("weather-forecast");
 
-  fetch("https://api.open-meteo.com/v1/forecast?latitude=3.14&longitude=101.69&current_weather=true")
+  fetch(
+    "https://api.open-meteo.com/v1/forecast?latitude=3.14&longitude=101.69&current_weather=true"
+  )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data)
+      console.log(data);
       dataContainer.innerHTML = JSON.stringify(data);
     })
     .catch((error) => console.log("Error: " + error));
