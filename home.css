@@ -13,12 +13,9 @@ body {
   padding: 10px;
 }
 
-.navbar .logo {
-  font-size: 20px;
-}
 
 .navbar .user-info {
-  font-size: 30px;
+  font-size: 35px;
   font-family: 'Dancing Script', cursive;
 }
 
@@ -28,6 +25,13 @@ body {
   color: #333;
   padding: 5px 10px;
   cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.navbar .logout-btn:hover {
+  background-color: black;
+  color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .calendar {
