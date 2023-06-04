@@ -49,8 +49,8 @@ document.getElementById("logoutBtn").addEventListener("click", function () {
 });
 
 // Calendar
-const calendar = document.getElementById('calendar');
-const calendarHeader = document.getElementById('calendar-header')
+const calendar = document.getElementById("calendar");
+const calendarHeader = document.getElementById("calendar-header");
 
 // Get the current date
 const currentDate = new Date();
@@ -61,8 +61,18 @@ const currentYear = currentDate.getFullYear();
 
 // Create an array of month names
 const monthNames = [
-  'January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December'
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
 // Function to generate the calendar for a given month and year
@@ -74,15 +84,15 @@ function generateCalendar(month, year) {
   const firstDayIndex = new Date(year, month, 1).getDay();
 
   // Clear the calendar
-  calendar.innerHTML = '';
+  calendar.innerHTML = "";
 
   // Create the calendar header
-  calendarHeader.innerHTML = monthNames[month] + ' ' + year;
+  calendarHeader.innerHTML = monthNames[month] + " " + year;
 
   // Create the calendar days
   for (let i = 0; i < totalDays + firstDayIndex; i++) {
-    const day = document.createElement('div');
-    day.classList.add('day');
+    const day = document.createElement("div");
+    day.classList.add("day");
 
     // Calculate the day number
     const dayNumber = i - firstDayIndex + 1;
@@ -97,7 +107,7 @@ function generateCalendar(month, year) {
         month === currentDate.getMonth() &&
         year === currentDate.getFullYear()
       ) {
-        day.classList.add('today');
+        day.classList.add("today");
       }
     }
 
@@ -107,7 +117,6 @@ function generateCalendar(month, year) {
 
 // Generate the calendar for the current month and year
 generateCalendar(currentMonth, currentYear);
-
 
 const todoList = document.getElementById("todo-list");
 const newTaskInput = document.getElementById("new-task-input");
@@ -176,4 +185,22 @@ addTaskBtn.addEventListener("click", addTask);
 clearAllBtn.addEventListener("click", clearAllTasks);
 
 // Load tasks on page load
-document.addEventListener("DOMContentLoaded", loadTasks); 
+// document.addEventListener("DOMContentLoaded", loadTasks);
+document.addEventListener("DOMContentLoaded", function() {
+  loadTasks();
+  weather();
+  // Call other functions here
+});
+
+// Weather
+function weather() {
+  const dataContainer = document.getElementById("weather-forecast");
+
+  fetch("https://api.open-meteo.com/v1/forecast?latitude=3.14&longitude=101.69&current_weather=true")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data)
+      dataContainer.innerHTML = JSON.stringify(data);
+    })
+    .catch((error) => console.log("Error: " + error));
+};
