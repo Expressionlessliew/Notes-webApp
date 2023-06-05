@@ -207,3 +207,16 @@ function weather() {
     })
     .catch((error) => console.log("Error: " + error));
 };
+
+const playlist = document.getElementById("playlist");
+const audioPlayer = document.getElementById("audio-player");
+
+// Play the selected song
+playlist.addEventListener("click", (event) => {
+  const target = event.target;
+  if (target.tagName === "LI") {
+    const songSrc = target.getAttribute("data-src");
+    audioPlayer.src = songSrc;
+    audioPlayer.play();
+  }
+});
