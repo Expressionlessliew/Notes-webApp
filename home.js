@@ -142,6 +142,7 @@ function createTaskItem(taskText) {
   // Create a clear button
   const clearBtn = document.createElement("button");
   clearBtn.textContent = "Clear";
+  clearBtn.style.marginLeft = "20px"
   clearBtn.addEventListener("click", () => {
     removeTask(taskItem, taskText);
   });

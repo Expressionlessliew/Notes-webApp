@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Dancing+Script&family=Dongle:wght@700&family=Roboto:wght@900&display=swap');
 
 body {
-  background-color: #B8E2F2;
+  background-image: url(assets/images/space.jpg);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 0px;
   margin: 0px;
