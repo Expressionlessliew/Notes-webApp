@@ -208,15 +208,18 @@ function weather() {
     .catch((error) => console.log("Error: " + error));
 };
 
-const playlist = document.getElementById("playlist");
-const audioPlayer = document.getElementById("audio-player");
+document.addEventListener('DOMContentLoaded', function() {
+  const playlist = document.getElementById('playlist');
+  const audioPlayer = document.getElementById('audioPlayer');
+  const audioSource = document.getElementById('audioSource');
 
-// Play the selected song
-playlist.addEventListener("click", (event) => {
-  const target = event.target;
-  if (target.tagName === "LI") {
-    const songSrc = target.getAttribute("data-src");
-    audioPlayer.src = songSrc;
-    audioPlayer.play();
-  }
+  playlist.addEventListener('click', function(event) {
+    const target = event.target.value;
+    if (target.tagName === 'LI') {
+      const audioSrc = target.getAttribute('data-src');
+      audioSource.src = audioSrc;
+      audioPlayer.load();
+      audioPlayer.play();
+    }
+  });
 });

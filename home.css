@@ -127,4 +127,21 @@ body {
 #calendar .today:hover {
   background-color: lightgreen;
 }
+
+h1 {
+  text-align: center;
+}
+
+#playlist {
+  list-style-type: none;
+  padding: 0;
+}
+
+#playlist li {
+  cursor: pointer;
+  padding: 5px;
+}
+
+#playlist li:hover {
+  background-color: #f0f0f0;
 }
