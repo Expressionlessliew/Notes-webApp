@@ -65,6 +65,7 @@ body {
 
 .todo-widget h2 {
   margin: 0;
+  text-align: center;
   padding-bottom: 10px;
 }
 
@@ -97,6 +98,7 @@ body {
 
 .calendar-widget h2 {
   margin: 0;
+  text-align: center;
   padding-bottom: 10px;
 }
 
