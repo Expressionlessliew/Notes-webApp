@@ -193,33 +193,37 @@ document.addEventListener("DOMContentLoaded", function () {
   // Call other functions here
 });
 
-// Weather
-function weather() {
-  const dataContainer = document.getElementById("weather-forecast");
+function setClock() {
+  const hourHand = document.querySelector('.hour-hand');
+  const minuteHand = document.querySelector('.minute-hand');
 
-  fetch(
-    "https://api.open-meteo.com/v1/forecast?latitude=3.14&longitude=101.69&current_weather=true"
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      dataContainer.innerHTML = JSON.stringify(data);
-    })
-    .catch((error) => console.log("Error: " + error));
-};
+  const currentDate = new Date();
+  const hours = currentDate.getHours();
+  const minutes = currentDate.getMinutes();
 
-document.addEventListener('DOMContentLoaded', function() {
-  const playlist = document.getElementById('playlist');
-  const audioPlayer = document.getElementById('audioPlayer');
-  const audioSource = document.getElementById('audioSource');
+  const hourRotation = (hours * 30) + (minutes * 0.5); // Each hour is 30 degrees, and each minute is 0.5 degrees
+  const minuteRotation = minutes * 6; // Each minute is 6 degrees
 
-  playlist.addEventListener('click', function(event) {
-    const target = event.target.value;
-    if (target.tagName === 'LI') {
-      const audioSrc = target.getAttribute('data-src');
-      audioSource.src = audioSrc;
-      audioPlayer.load();
-      audioPlayer.play();
-    }
-  });
-});
+  hourHand.style.transform = `rotate(${hourRotation}deg)`;
+  minuteHand.style.transform = `rotate(${minuteRotation}deg)`;
+}
+
+// Update the clock every second
+setClock();
+setInterval(setClock, 1000);
+
+// // Weather
+// function weather() {
+//   const dataContainer = document.getElementById("weather-forecast");
+
+//   fetch(
+//     "https://api.open-meteo.com/v1/forecast?latitude=3.14&longitude=101.69&current_weather=true"
+//   )
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log(data);
+//       dataContainer.innerHTML = JSON.stringify(data);
+//     })
+//     .catch((error) => console.log("Error: " + error));
+// };
+// ;

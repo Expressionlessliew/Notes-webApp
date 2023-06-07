@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Dongle:wght@700&family=Roboto:wght@900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Dancing+Script&family=Dongle:wght@700&family=Roboto:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Dongle:wght@700&family=Roboto:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Dancing+Script&family=Dongle:wght@700&family=Roboto:wght@900&display=swap");
 
 body {
   background-image: url(assets/images/space.jpg);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 0px;
   margin: 0px;
 }
@@ -20,7 +20,7 @@ body {
 .navbar .user-info {
   flex: 1;
   font-size: 35px;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
 }
 
 /* .navbar .weather-notification {
@@ -47,7 +47,8 @@ body {
   display: flex;
 }
 
-.todo-list, .calendar-widget {
+.todo-list,
+.calendar-widget {
   flex: 1;
 }
 
@@ -119,7 +120,7 @@ body {
 }
 
 #calendar .today {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border-radius: 10px;
   color: white;
 }
@@ -127,21 +128,42 @@ body {
 #calendar .today:hover {
   background-color: lightgreen;
 }
-
-h1 {
-  text-align: center;
+.clock {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  margin-top: -310px;
+  margin-left: 55%;
 }
 
-#playlist {
-  list-style-type: none;
-  padding: 0;
+.hour-hand,
+.minute-hand {
+  position: absolute;
+  background-color: black;
+  transform-origin: bottom center;
 }
 
-#playlist li {
-  cursor: pointer;
-  padding: 5px;
+.hour-hand {
+  width: 6px;
+  height: 60px;
+  top: 50%;
+  left: calc(50% - 3px);
+  margin-top: -60px;
+  z-index: 1;
 }
 
-#playlist li:hover {
-  background-color: #f0f0f0;
+.minute-hand {
+  width: 4px;
+  height: 80px;
+  top: 50%;
+  left: calc(50% - 2px);
+  margin-top: -80px;
+  z-index: 2;
+}
+#whatsappimg {
+  background: transparent;
+  height: 100px;
+  width: 100px;
 }
