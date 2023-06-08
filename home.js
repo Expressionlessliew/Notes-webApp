@@ -118,102 +118,101 @@ function generateCalendar(month, year) {
 // Generate the calendar for the current month and year
 generateCalendar(currentMonth, currentYear);
 
-const todoList = document.getElementById("todo-list");
-const newTaskInput = document.getElementById("new-task-input");
-const addTaskBtn = document.getElementById("add-task-btn");
-const clearAllBtn = document.getElementById("clear-all-btn");
+// const todoList = document.getElementById("todo-list");
+// const newTaskInput = document.getElementById("new-task-input");
+// const addTaskBtn = document.getElementById("add-task-btn");
+// const clearAllBtn = document.getElementById("clear-all-btn");
 
-// Load tasks from local storage
-function loadTasks() {
-  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  tasks.forEach((task) => createTaskItem(task));
-}
+// // Load tasks from local storage
+// function loadTasks() {
+//   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+//   tasks.forEach((task) => createTaskItem(task));
+// }
 
-// Save tasks to local storage
-function saveTasks(tasks) {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-}
+// // Save tasks to local storage
+// function saveTasks(tasks) {
+//   localStorage.setItem("tasks", JSON.stringify(tasks));
+// }
 
-// Create a new task item
-function createTaskItem(taskText) {
-  const taskItem = document.createElement("li");
-  taskItem.textContent = taskText;
+// // Create a new task item
+// function createTaskItem(taskText) {
+//   const taskItem = document.createElement("li");
+//   taskItem.textContent = taskText;
 
-  // Create a clear button
-  const clearBtn = document.createElement("button");
-  clearBtn.textContent = "Clear";
-  clearBtn.style.marginLeft = "20px"
-  clearBtn.addEventListener("click", () => {
-    removeTask(taskItem, taskText);
-  });
+//   // Create a clear button
+//   const clearBtn = document.createElement("button");
+//   clearBtn.textContent = "Clear";
+//   clearBtn.style.marginLeft = "20px";
+//   clearBtn.addEventListener("click", () => {
+//     removeTask(taskItem, taskText);
+//   });
 
-  // Append the clear button to the task item
-  taskItem.appendChild(clearBtn);
+//   // Append the clear button to the task item
+//   taskItem.appendChild(clearBtn);
 
-  todoList.appendChild(taskItem);
-}
+//   todoList.appendChild(taskItem);
+// }
 
-// Remove a task
-function removeTask(taskItem, taskText) {
-  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  const updatedTasks = tasks.filter((task) => task !== taskText);
-  saveTasks(updatedTasks);
-  todoList.removeChild(taskItem);
-}
+// // Remove a task
+// function removeTask(taskItem, taskText) {
+//   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+//   const updatedTasks = tasks.filter((task) => task !== taskText);
+//   saveTasks(updatedTasks);
+//   todoList.removeChild(taskItem);
+// }
 
-// Add a new task
-function addTask() {
-  const taskText = newTaskInput.value;
-  if (taskText.trim() !== "") {
-    createTaskItem(taskText);
+// // Add a new task
+// function addTask() {
+//   const taskText = newTaskInput.value;
+//   if (taskText.trim() !== "") {
+//     createTaskItem(taskText);
 
-    // Save the task to local storage
-    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    tasks.push(taskText);
-    saveTasks(tasks);
+//     // Save the task to local storage
+//     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+//     tasks.push(taskText);
+//     saveTasks(tasks);
 
-    newTaskInput.value = "";
+//     newTaskInput.value = "";
+//   }
+// }
+
+// addTaskBtn.addEventListener("click", addTask);
+// clearAllBtn.addEventListener("click", clearAllTasks);
+
+// // Clear all tasks
+// function clearAllTasks() {
+//   todoList.innerHTML = "";
+//   localStorage.removeItem("tasks");
+// }
+
+function time() {
+  const currentTime = new Date();
+  const hours = currentTime.getHours();
+  const minutes = currentTime.getMinutes();
+  const seconds = currentTime.getSeconds();
+  const session = document.getElementById("session");
+
+  // Convert hours to 12-hour format
+  let formattedHours = hours % 12;
+  if (formattedHours === 0) {
+    formattedHours = 12;
+  }
+
+  document.getElementById("hours").textContent = formattedHours.toString().padStart(2, "0");
+  document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+  document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+
+  if (hours >= 12) {
+    session.textContent = "PM";
+  } else {
+    session.textContent = "AM";
   }
 }
 
-// Clear all tasks
-function clearAllTasks() {
-  todoList.innerHTML = "";
-  localStorage.removeItem("tasks");
-}
+setInterval(time, 1000);
 
-addTaskBtn.addEventListener("click", addTask);
-clearAllBtn.addEventListener("click", clearAllTasks);
-
-// Load tasks on page load
-// document.addEventListener("DOMContentLoaded", loadTasks);
-document.addEventListener("DOMContentLoaded", function () {
-  loadTasks();
-  weather();
-  // Call other functions here
-});
-
-function setClock() {
-  const hourHand = document.querySelector('.hour-hand');
-  const minuteHand = document.querySelector('.minute-hand');
-
-  const currentDate = new Date();
-  const hours = currentDate.getHours();
-  const minutes = currentDate.getMinutes();
-
-  const hourRotation = (hours * 30) + (minutes * 0.5); // Each hour is 30 degrees, and each minute is 0.5 degrees
-  const minuteRotation = minutes * 6; // Each minute is 6 degrees
-
-  hourHand.style.transform = `rotate(${hourRotation}deg)`;
-  minuteHand.style.transform = `rotate(${minuteRotation}deg)`;
-}
-
-// Update the clock every second
-setClock();
-setInterval(setClock, 1000);
-
-// // Weather
-// function weather() {
+/* // // Weather
+// function weather() { */
 //   const dataContainer = document.getElementById("weather-forecast");
 
 //   fetch(
