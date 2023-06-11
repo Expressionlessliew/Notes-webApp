@@ -3,6 +3,7 @@
   <head>
     <title>Home</title>
     <link href="home.css" rel="stylesheet" />
+    <link href="music.css" rel="stylesheet" />
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
     <script src="firebase-config.js"></script>
@@ -38,6 +39,17 @@
         <button id="add-task-btn">Add</button>
         <ol id="todo-list"></ol>
       </div>
+
+      <div class="player">
+        <ul id="trackList">
+          <li data-src="music/song1.mp3">Song 1</li>
+          <li data-src="music/song2.mp3">Unstoppable</li>
+          <li data-src="music/song3.mp3">Song 3</li>
+        </ul>
+        <audio id="audioPlayer" controls></audio>
+      </div>
+    
+      <script src="music.js"></script>
 
       <!-- <div id="Whatsapp" class="Whatsapp">
         <img
