@@ -1,6 +1,0 @@
-// to save data
-localStorage.setItem("user", displayName)
-
-// to retrieve the saved data
-localStorage.getItem("user")
-
