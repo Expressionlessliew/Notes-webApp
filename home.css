@@ -23,11 +23,11 @@ body {
   font-family: "Dancing Script", cursive;
 }
 
-/* .navbar .weather-notification {
+.navbar .time {
   flex: 1;
-  text-align: center;
+  justify-content: center;
   font-weight: bold;
-} */
+}
 
 .navbar .logout-btn {
   background-color: red;
@@ -128,7 +128,7 @@ body {
 #calendar .today:hover {
   background-color: lightgreen;
 }
-.time {
+/* .time {
   font-family: "Arial", Helvetica, sans-serif;
   padding: 30px;
   color: #ffffff;
@@ -139,7 +139,7 @@ body {
   transform: translate(50%, -50%);
   font-size: 80px;
   white-space: nowrap;
-}
+} */
 
 #whatsappimg {
   margin-top: 120px;

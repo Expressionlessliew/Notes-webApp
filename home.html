@@ -12,7 +12,14 @@
   <body>
     <div class="navbar">
       <div class="user-info" id="userInfo"></div>
-      <div class="weather-notification" id="weatherNotification"></div>
+      <div class="time" id="time">
+        <span id="hours">00</span>
+        <span>:</span>
+        <span id="minutes">00</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+        <span id="session">AM</span>
+      </div>
       <button class="logout-btn" id="logoutBtn">Logout</button>
     </div>
 
@@ -30,15 +37,6 @@
         <input type="text" id="new-task-input" placeholder="Add a new task" />
         <button id="add-task-btn">Add</button>
         <ol id="todo-list"></ol>
-      </div>
-
-      <div class="time" id="time">
-        <span id="hours">00</span>
-        <span>:</span>
-        <span id="minutes">00</span>
-        <span>:</span>
-        <span id="seconds">00</span>
-        <span id="session">AM</span>
       </div>
 
       <div id="Whatsapp" class="Whatsapp">
