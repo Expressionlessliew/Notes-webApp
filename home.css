@@ -128,12 +128,12 @@ body {
 #calendar .today:hover {
   background-color: lightgreen;
 }
-.time{
+.time {
   font-family: "Arial", Helvetica, sans-serif;
   padding: 30px;
   color: #ffffff;
   font-weight: bold;
-  position:absolute;
+  position: absolute;
   left: 27%;
   top: 20%;
   transform: translate(50%, -50%);
@@ -148,17 +148,24 @@ body {
   width: 100px;
 }
 
-#instagramimg{
+#instagramimg {
   margin-top: 120px;
   background: transparent;
   height: 100px;
   width: 100px;
 }
 
-#youtubeimg{
+#youtubeimg {
   margin-top: 120px;
   margin-left: -30px;
   background: transparent;
   height: 100px;
   width: 150px;
+}
+
+#tiktokimg {
+  margin-top: 120px;
+  background: transparent;
+  height: 50px;
+  width: 50px;
 }
