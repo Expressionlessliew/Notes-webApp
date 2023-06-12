@@ -64,6 +64,17 @@ body {
   }
 }
 
+.selected {
+  color: grey;
+}
+
+#currentlyPlaying {
+  color: green;
+  font-family: Verdana, sans-serif;
+  font-weight: bold;
+  list-style: none;
+}
+
 .songsheading{
   
 }
