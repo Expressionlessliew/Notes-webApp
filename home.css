@@ -64,6 +64,9 @@ body {
   }
 }
 
+.songsheading{
+  
+}
 
 .player {
   margin: 10px;
@@ -86,7 +89,7 @@ li {
 }
 
 audio {
-  margin-top: 100px;
+  margin-top: 5px;
   width: 100%;
 }
 
