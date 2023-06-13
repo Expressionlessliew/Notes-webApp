@@ -64,8 +64,10 @@ body {
   }
 }
 
-.songsheading{
-  
+#songsheading {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
 }
 
 .player {
@@ -78,6 +80,7 @@ body {
 }
 
 #trackList {
+  margin: 0px;
   font-weight: bold;
   list-style: none;
   padding: 0;
@@ -88,8 +91,8 @@ li {
   margin-bottom: 5px;
 }
 
-audio {
-  margin-top: 5px;
+#audioPlayer {
+  margin-top: 0px;
   width: 100%;
 }
 
@@ -165,13 +168,12 @@ audio {
 }
 
 #whatsappimg {
-  margin-top: 120px;
   background: transparent;
   height: 100px;
   width: 100px;
 }
 
-#instagramimg {
+/* #instagramimg {
   margin-top: 120px;
   background: transparent;
   height: 100px;
@@ -191,4 +193,4 @@ audio {
   background: transparent;
   height: 50px;
   width: 50px;
-}
+} */
