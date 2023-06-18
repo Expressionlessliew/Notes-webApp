@@ -334,9 +334,12 @@ li {
   height: 50px;
 }
 
-
 #blinking{
   width: 90px;
   height:50px;
+}
 
+#planetgif3{
+  height: 300px;
+  width:300px;
 }
