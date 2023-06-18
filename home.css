@@ -45,24 +45,34 @@ body {
   color: black;
 }
 
-.dashboard-container {
+.dashboard-container,
+.dashboard-container-2 {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 10px;
+  overflow-x: auto;
+}
+
+.dashboard-container>div,
+.dashboard-container-2>div {
+  flex-basis: calc(33.33% - 45px);
+  margin: 10px;
+  min-width: 0;
+  min-height: 0;
 }
 
 .calendar-widget,
 .todo-widget,
-.player {
-  flex: 1 0 300px; /* Each div will take up equal width on the same row */
+.player,
+.new-widget,
+.socials-widget {
+  flex: 1 0 300px
 }
 
-.calendar-widget:hover {
-  transform: scale(1.05);
-}
-.todo-widget:hover {
-  transform: scale(1.05);
-}
-.player:hover {
+.calendar-widget:hover,
+.todo-widget:hover,
+.player:hover,
+.socials-widget:hover {
   transform: scale(1.05);
 }
 
@@ -73,6 +83,7 @@ body {
 }
 
 @media screen and (min-width: 600px) {
+
   .calendar-widget,
   .todo-widget,
   .player {
@@ -116,7 +127,6 @@ body {
   text-align: center;
   padding-bottom: 10px;
   margin-right: 10px;
-
 }
 
 #trackList {
@@ -151,7 +161,7 @@ li {
 }
 
 .todo-widget .Title {
-  padding-bottom: 5px ;
+  padding-bottom: 5px;
 }
 
 .todo-widget h2 {
@@ -160,6 +170,40 @@ li {
   padding-bottom: 10px;
   margin-right: 10px;
 }
+
+.new-widget {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  border-style: solid;
+  background-color: lightgrey;
+  font-family: "Orbitron", sans-serif;
+}
+
+.socials-widget {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  border-style: solid;
+  background-color: #CBC3E3;
+  font-family: "Orbitron", sans-serif;
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap>a {
+  flex-basis: calc(50% - 20px);
+}
+
+.wrap a {
+  margin: 10px
+}
+
 
 #new-task-input {
   width: 200px;

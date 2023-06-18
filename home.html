@@ -1,121 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home</title>
-    <link href="home.css" rel="stylesheet" />
-    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
-    <script src="firebase-config.js"></script>
-    <script src="app.js"></script>
-  </head>
 
-  <body>
-    <div class="navbar">
-      <div class="user-info" id="userInfo"></div>
-      <img id="rocket" src="assets/images/rockect.png" al="rocket" />
-      <div class="time" id="time">
-        <span id="hours">00</span>
-        <span>:</span>
-        <span id="minutes">00</span>
-        <span>:</span>
-        <span id="seconds">00</span>
-        <span id="session">AM</span>
-      </div>
-      <button class="logout-btn" id="logoutBtn">Logout</button>
+<head>
+  <title>Home</title>
+  <link href="home.css" rel="stylesheet" />
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="user-info" id="userInfo"></div>
+    <img id="rocket" src="assets/images/rockect.png" al="rocket" />
+    <div class="time" id="time">
+      <span id="hours">00</span>
+      <span>:</span>
+      <span id="minutes">00</span>
+      <span>:</span>
+      <span id="seconds">00</span>
+      <span id="session">AM</span>
+    </div>
+    <button class="logout-btn" id="logoutBtn">Logout</button>
+  </div>
+
+  <div class="dashboard-container">
+    <!-- calendar -->
+    <div class="calendar-widget">
+      <span class="Title">
+        <h2>Calendar</h2>
+        <img id="space3" src="assets/images/planets3.png" alt="planets3" />
+      </span>
+      <h3 id="calendar-header"></h3>
+      <div id="calendar"></div>
     </div>
 
-    <div class="dashboard-container">
-      <!-- calendar -->
-      <div class="calendar-widget">
-        <span class="Title">
-          <h2>Calendar</h2>
-          <img id="space3" src="assets/images/planets3.png" alt="planets3" />
-        </span>
-        <h3 id="calendar-header"></h3>
-        <div id="calendar"></div>
-      </div>
-
-      <!-- to-do-list -->
-      <div class="todo-widget">
-        <span class="Title">
-          <h2>To-Do List</h2>
-          <img id="space2" src="assets/images/planets2.png" al="planets2" />
-        </span>
-        <input type="text" id="new-task-input" placeholder="Add a new task" />
-        <button id="add-task-btn">Add</button>
-        <ol id="todo-list"></ol>
-      </div>
-
-      <div class="player">
-        <span class="Title">
-          <h2 id="songsheading">TOP of mix</h2>
-          <img
-            id="astronautimg"
-            src="assets/images/astronaut.png"
-            alt="astronaut"
-          />
-        </span>
-        <ul id="trackList">
-          <li data-src="music/courage.mp3">Unstoppable</li>
-          <li data-src="music/Japanese.mp3">Japanese pop</li>
-          <li data-src="music/korean pop.mp3">Korean pop</li>
-          <li data-src="music/Lonely warrior.mp3">Chinese pop</li>
-          <li data-src="music/Malay pop.mp3">Malay pop</li>
-          <li data-src="music/Nightcore.mp3">Nightcore mix</li>
-          <li data-src="music/piano.mp3">Soft pop</li>
-          <li data-src="music/slowpop.mp3">Slow pop</li>
-        </ul>
-        <p id="currentlyPlaying"></p>
-        <!-- Added paragraph for displaying currently playing song -->
-        <audio id="audioPlayer" controls></audio>
-      </div>
+    <!-- to-do-list -->
+    <div class="todo-widget">
+      <span class="Title">
+        <h2>To-Do List</h2>
+        <img id="space2" src="assets/images/planets2.png" al="planets2" />
+      </span>
+      <input type="text" id="new-task-input" placeholder="Add a new task" />
+      <button id="add-task-btn">Add</button>
+      <ol id="todo-list"></ol>
     </div>
 
-    <div id="images">
-      <a href="https://web.whatsapp.com/"
-        ><img
-          id="whatsappimg"
-          src="assets/images/whatsapp-icon.png"
-          alt="whatsapp"
-      /></a>
-      <a href="https://www.instagram.com/"
-        ><img
-          id="instagramimg"
-          src="assets/images/instagram.png"
-          alt="instagram"
-      /></a>
-      <a href="https://www.youtube.com/"
-        ><img id="youtubeimg" src="assets/images/youtube.png" alt="youtube"
-      /></a>
-      <a href="https://www.tiktok.com/en/"
-        ><img id="tiktokimg" src="assets/images/tiktok.png" alt="tiktok"
-      /></a>
-      <a href="https://twitter.com/?lang=en"
-        ><img id="twitterimg" src="assets/images/twitter.png" alt="twitter"
-      /></a>
-      <a href="https://web.telegram.org/a/"
-        ><img id="telegramimg" src="assets/images/telegram.png" alt="telegram"
-      /></a>
-      <a href="https://www.google.com/"
-        ><img id="googleimg" src="assets/images/google.png" alt="google"
-      /></a>
-      <a href="https://github.com/"
-        ><img id="githubimg" src="assets/images/github.png" alt="github"
-      /></a>
-      <a href="https://web.facebook.com/"
-        ><img id="facebookimg" src="assets/images/facebook.png" alt="facebook"
-      /></a>
-      <a href="https://www.pinterest.com/"
-        ><img
-          id="pinterestimg"
-          src="assets/images/pinterest.png"
-          alt="pinterest"
-      /></a>
+    <div class="player">
+      <span class="Title">
+        <h2 id="songsheading">TOP of mix</h2>
+        <img id="astronautimg" src="assets/images/astronaut.png" alt="astronaut" />
+      </span>
+      <ul id="trackList">
+        <li data-src="music/courage.mp3">Unstoppable</li>
+        <li data-src="music/Japanese.mp3">Japanese pop</li>
+        <li data-src="music/korean pop.mp3">Korean pop</li>
+        <li data-src="music/Lonely warrior.mp3">Chinese pop</li>
+        <li data-src="music/Malay pop.mp3">Malay pop</li>
+        <li data-src="music/Nightcore.mp3">Nightcore mix</li>
+        <li data-src="music/piano.mp3">Soft pop</li>
+        <li data-src="music/slowpop.mp3">Slow pop</li>
+      </ul>
+      <p id="currentlyPlaying"></p>
+      <!-- Added paragraph for displaying currently playing song -->
+      <audio id="audioPlayer" controls></audio>
+    </div>
+  </div>
+
+  <div class="dashboard-container-2">
+    <div class="socials-widget">
+      <span class="Title">
+        <h2>Socials</h2>
+        <img id="space2" src="assets/images/planets2.png" al="planets2" />
+      </span>
+      <div class="wrap">
+      <a href="https://web.whatsapp.com/"><img id="whatsappimg" src="assets/images/whatsapp-icon.png"
+          alt="whatsapp" /></a>
+      <a href="https://www.instagram.com/"><img id="instagramimg" src="assets/images/instagram.png"
+          alt="instagram" /></a>
+      <a href="https://www.tiktok.com/en/"><img id="tiktokimg" src="assets/images/tiktok.png" alt="tiktok" /></a>
+      <a href="https://twitter.com/?lang=en"><img id="twitterimg" src="assets/images/twitter.png" alt="twitter" /></a>
+    </div>
     </div>
 
-    <script src="music.js"></script>
-    <script src="home.js"></script>
-    <script src="time.js"></script>
-    <script src="calender.js"></script>
-  </body>
+    <div class="new-widget">
+      <span class="Title">
+        <h2>In Progress</h2>
+        <img id="space2" src="assets/images/planets2.png" al="planets2" />
+      </span>
+    </div>
+    <div class="new-widget">
+      <span class="Title">
+        <h2>In Progress</h2>
+        <img id="space2" src="assets/images/planets2.png" al="planets2" />
+      </span>
+    </div>
+  </div>
+  <script src="music.js"></script>
+  <script src="home.js"></script>
+  <script src="time.js"></script>
+  <script src="calender.js"></script>
+</body>
+
 </html>
