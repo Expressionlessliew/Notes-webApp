@@ -81,6 +81,11 @@ body {
   text-align: center;
 }
 
+#astronautimg{
+  height: 70px;
+  width: 50px;
+}
+
 .player {
   margin: 10px;
   padding: 10px;
@@ -105,6 +110,11 @@ li {
 #audioPlayer {
   margin-top: 0px;
   width: 100%;
+}
+
+#space2{
+  height: 50px;
+  width: 50px;
 }
 
 .todo-widget {
@@ -178,15 +188,18 @@ li {
   background-color: lightgreen;
 }
 
-#images {
-  margin: 0px;
-  padding: 0px;
-  display: flex;
+#images {  
+  display:flex;
+  flex-wrap:wrap-reverse;
+  justify-content: flex-end;
+  align-items:end;
+  gap: 2px;
   justify-content: end;
 }
 
 #whatsappimg {
   height: 100px;
+  text-align: end;
   width: 100px;
 }
 
@@ -229,4 +242,20 @@ li {
 #telegramimg {
   height: 100px;
   width: 100px;
+}
+
+#pinterestimg{
+  height: 100px;
+  width: 100px;
+}
+
+#rocket{
+  width: 50px;
+  height: 50px;
+}
+
+#space3{
+  display: flex;
+  width: 50px;
+  height:50px;
 }
