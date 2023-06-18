@@ -287,16 +287,12 @@ li {
 #space3 {
   display: flex;
   width: 50px;
-<<<<<<< Updated upstream
   height: 50px;
 }
-=======
-  height:50px;
-}
+
 
 #blinking{
   width: 90px;
   height:50px;
 
 }
->>>>>>> Stashed changes
