@@ -23,8 +23,8 @@ body {
 }
 
 .navbar .time {
-  padding-right:15px;
-  justify-content:end;
+  padding-right: 15px;
+  justify-content: end;
   font-weight: bold;
   font-family: "Orbitron", sans-serif;
   color: #ffffff;
@@ -56,6 +56,22 @@ body {
   flex: 1 0 300px; /* Each div will take up equal width on the same row */
 }
 
+.calendar-widget:hover {
+  transform: scale(1.05);
+}
+.todo-widget:hover {
+  transform: scale(1.05);
+}
+.player:hover {
+  transform: scale(1.05);
+}
+
+.Title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (min-width: 600px) {
   .calendar-widget,
   .todo-widget,
@@ -81,7 +97,7 @@ body {
   text-align: center;
 }
 
-#astronautimg{
+#astronautimg {
   height: 70px;
   width: 50px;
 }
@@ -93,6 +109,14 @@ body {
   border-style: solid;
   background-color: beige;
   font-family: "Orbitron", sans-serif;
+}
+
+.player h2 {
+  margin: 0;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-right: 10px;
+
 }
 
 #trackList {
@@ -112,7 +136,7 @@ li {
   width: 100%;
 }
 
-#space2{
+#space2 {
   height: 50px;
   width: 50px;
 }
@@ -126,10 +150,15 @@ li {
   font-family: "Orbitron", sans-serif;
 }
 
+.todo-widget .Title {
+  padding-bottom: 5px ;
+}
+
 .todo-widget h2 {
   margin: 0;
   text-align: center;
   padding-bottom: 10px;
+  margin-right: 10px;
 }
 
 #new-task-input {
@@ -160,6 +189,7 @@ li {
   margin: 0;
   text-align: center;
   padding-bottom: 10px;
+  margin-right: 10px;
 }
 
 #calendar {
@@ -188,11 +218,11 @@ li {
   background-color: lightgreen;
 }
 
-#images {  
-  display:flex;
-  flex-wrap:wrap-reverse;
+#images {
+  display: flex;
+  flex-wrap: wrap-reverse;
   justify-content: flex-end;
-  align-items:end;
+  align-items: end;
   gap: 2px;
   justify-content: end;
 }
@@ -244,18 +274,18 @@ li {
   width: 100px;
 }
 
-#pinterestimg{
+#pinterestimg {
   height: 100px;
   width: 100px;
 }
 
-#rocket{
+#rocket {
   width: 50px;
   height: 50px;
 }
 
-#space3{
+#space3 {
   display: flex;
   width: 50px;
-  height:50px;
+  height: 50px;
 }

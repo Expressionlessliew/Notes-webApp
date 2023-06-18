@@ -12,7 +12,7 @@
   <body>
     <div class="navbar">
       <div class="user-info" id="userInfo"></div>
-      <img id="rocket" src="assets/images/rockect.png" al="rocket"/>
+      <img id="rocket" src="assets/images/rockect.png" al="rocket" />
       <div class="time" id="time">
         <span id="hours">00</span>
         <span>:</span>
@@ -27,22 +27,34 @@
     <div class="dashboard-container">
       <!-- calendar -->
       <div class="calendar-widget">
-        <h2>Calendar</h2><img id="space3" src="assets/images/planets3.png" al="planets3"/>
+        <span class="Title">
+          <h2>Calendar</h2>
+          <img id="space3" src="assets/images/planets3.png" alt="planets3" />
+        </span>
         <h3 id="calendar-header"></h3>
         <div id="calendar"></div>
       </div>
 
       <!-- to-do-list -->
       <div class="todo-widget">
-        <h2>To-Do List</h2><img id="space2" src="assets/images/planets2.png" al="planets2"/>
+        <span class="Title">
+          <h2>To-Do List</h2>
+          <img id="space2" src="assets/images/planets2.png" al="planets2" />
+        </span>
         <input type="text" id="new-task-input" placeholder="Add a new task" />
         <button id="add-task-btn">Add</button>
         <ol id="todo-list"></ol>
       </div>
 
       <div class="player">
-        <h1 id="songsheading">TOP of mix</h1>
-        <img id="astronautimg" src="assets/images/astronaut.png" alt="astronaut"/>
+        <span class="Title">
+          <h2 id="songsheading">TOP of mix</h2>
+          <img
+            id="astronautimg"
+            src="assets/images/astronaut.png"
+            alt="astronaut"
+          />
+        </span>
         <ul id="trackList">
           <li data-src="music/courage.mp3">Unstoppable</li>
           <li data-src="music/Japanese.mp3">Japanese pop</li>
@@ -60,16 +72,45 @@
     </div>
 
     <div id="images">
-      <a href="https://web.whatsapp.com/" ><img id="whatsappimg" src="assets/images/whatsapp-icon.png" alt="whatsapp"/></a>
-      <a href="https://www.instagram.com/" ><img id="instagramimg" src="assets/images/instagram.png" alt="instagram"/></a>
-      <a href="https://www.youtube.com/" ><img id="youtubeimg" src="assets/images/youtube.png" alt="youtube" /></a>
-      <a href="https://www.tiktok.com/en/" ><img id="tiktokimg" src="assets/images/tiktok.png" alt="tiktok" /></a>
-      <a href="https://twitter.com/?lang=en" ><img id="twitterimg" src="assets/images/twitter.png" alt="twitter" /></a>
-      <a href="https://web.telegram.org/a/" ><img id="telegramimg" src="assets/images/telegram.png" alt="telegram" /></a>
-      <a href="https://www.google.com/" ><img id="googleimg" src="assets/images/google.png" alt="google" /></a>
-      <a href="https://github.com/" ><img id="githubimg" src="assets/images/github.png" alt="github" /></a>
-      <a href="https://web.facebook.com/" ><img id="facebookimg" src="assets/images/facebook.png" alt="facebook" /></a>
-      <a href="https://www.pinterest.com/" ><img id="pinterestimg" src="assets/images/pinterest.png" alt="pinterest" /></a>
+      <a href="https://web.whatsapp.com/"
+        ><img
+          id="whatsappimg"
+          src="assets/images/whatsapp-icon.png"
+          alt="whatsapp"
+      /></a>
+      <a href="https://www.instagram.com/"
+        ><img
+          id="instagramimg"
+          src="assets/images/instagram.png"
+          alt="instagram"
+      /></a>
+      <a href="https://www.youtube.com/"
+        ><img id="youtubeimg" src="assets/images/youtube.png" alt="youtube"
+      /></a>
+      <a href="https://www.tiktok.com/en/"
+        ><img id="tiktokimg" src="assets/images/tiktok.png" alt="tiktok"
+      /></a>
+      <a href="https://twitter.com/?lang=en"
+        ><img id="twitterimg" src="assets/images/twitter.png" alt="twitter"
+      /></a>
+      <a href="https://web.telegram.org/a/"
+        ><img id="telegramimg" src="assets/images/telegram.png" alt="telegram"
+      /></a>
+      <a href="https://www.google.com/"
+        ><img id="googleimg" src="assets/images/google.png" alt="google"
+      /></a>
+      <a href="https://github.com/"
+        ><img id="githubimg" src="assets/images/github.png" alt="github"
+      /></a>
+      <a href="https://web.facebook.com/"
+        ><img id="facebookimg" src="assets/images/facebook.png" alt="facebook"
+      /></a>
+      <a href="https://www.pinterest.com/"
+        ><img
+          id="pinterestimg"
+          src="assets/images/pinterest.png"
+          alt="pinterest"
+      /></a>
     </div>
 
     <script src="music.js"></script>
