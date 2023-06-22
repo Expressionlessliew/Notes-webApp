@@ -282,11 +282,11 @@ li {
   width: 100px;
 }
 
-#youtubeimg {
+/* #youtubeimg {
   flex: none;
   height: 80px;
   width: 100px;
-}
+} */
 
 #tiktokimg {
   height: 100px;
@@ -298,7 +298,7 @@ li {
   width: 100px;
 }
 
-#facebookimg {
+/* #facebookimg {
   height: 100px;
   width: 100px;
 }
@@ -311,17 +311,17 @@ li {
 #googleimg {
   height: 100px;
   width: 100px;
-}
+} */
 
 #telegramimg {
-  height: 100px;
-  width: 100px;
+  height: 1000px;
+  width: 1000px;
 }
 
-#pinterestimg {
+/* #pinterestimg {
   height: 100px;
   width: 100px;
-}
+} */
 
 #rocket {
   width: 50px;
@@ -342,4 +342,11 @@ li {
 #planetgif3{
   height: 300px;
   width:300px;
+}
+
+#movingplanet{
+  display: flex;
+  width: 100px;
+  height: 50px;
+
 }
