@@ -2,9 +2,9 @@ let database = firebase.database();
 let dataRef = database.ref("data");
 
 let newData = {
-  name: "John Doe",
-  age: 25,
-  email: "johndoe@example.com",
+  name: "giff",
+  age: 56,
+  email: "hhhhh@example.com",
 };
 //Creating Data and Store in DB
 dataRef
