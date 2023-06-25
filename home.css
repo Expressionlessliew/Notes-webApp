@@ -272,56 +272,27 @@ li {
 }
 
 #whatsappimg {
-  height: 100px;
+  height: 50px;
   text-align: end;
-  width: 100px;
+  width: 50px;
 }
 
 #instagramimg {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
 }
 
-/* #youtubeimg {
-  flex: none;
-  height: 80px;
-  width: 100px;
-} */
 
 #tiktokimg {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
 }
 
 #twitterimg {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
 }
 
-/* #facebookimg {
-  height: 100px;
-  width: 100px;
-}
-
-#githubimg {
-  height: 100px;
-  width: 100px;
-}
-
-#googleimg {
-  height: 100px;
-  width: 100px;
-} */
-
-#telegramimg {
-  height: 1000px;
-  width: 1000px;
-}
-
-/* #pinterestimg {
-  height: 100px;
-  width: 100px;
-} */
 
 #rocket {
   width: 50px;

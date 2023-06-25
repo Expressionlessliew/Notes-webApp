@@ -2,6 +2,7 @@
 const firebaseConfig = {
   apiKey: "AIzaSyB_bDky6Y4E0tocM1L2E0H7_3LGsKxhwwo",
   authDomain: "let-try-9891c.firebaseapp.com",
+  databaseURL: "https://let-try-9891c-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "let-try-9891c",
   storageBucket: "let-try-9891c.appspot.com",
   messagingSenderId: "1039225632951",
