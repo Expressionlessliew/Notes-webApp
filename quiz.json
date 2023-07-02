@@ -1,0 +1,17 @@
+{
+    "questions": {
+      "question1": {
+        "name": "What is the capital of France",
+        "answer": "Paris"
+      },
+      "question2": {
+        "name": "Question 2",
+        "answer": "blue"
+      },
+      "question3": {
+        "name": "Question 3",
+        "answer": "green"
+      }
+    }
+  }
+  
