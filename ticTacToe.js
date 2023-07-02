@@ -35,6 +35,46 @@ function handleClick() {
 
 function computerMove() {
   const availableCells = Array.from(cells).filter(cell => cell.textContent === '');
+
+  // Check if the computer can win on the next move
+  for (let i = 0; i < availableCells.length; i++) {
+    const cell = availableCells[i];
+    cell.textContent = currentPlayer;
+    cell.classList.add(currentPlayer);
+
+    if (checkWin(currentPlayer)) {
+      gameOver(currentPlayer + ' wins!');
+      return;
+    }
+
+    cell.textContent = '';
+    cell.classList.remove(currentPlayer);
+  }
+
+  // Check if the player can win on the next move and block them
+  for (let i = 0; i < availableCells.length; i++) {
+    const cell = availableCells[i];
+    cell.textContent = 'X'; // Assume player's move
+    cell.classList.add('X');
+
+    if (checkWin('X')) {
+      cell.textContent = currentPlayer;
+      cell.classList.add(currentPlayer);
+
+      if (checkWin(currentPlayer)) {
+        gameOver(currentPlayer + ' wins!');
+        return;
+      }
+
+      cell.textContent = '';
+      cell.classList.remove(currentPlayer);
+    } else {
+      cell.textContent = '';
+      cell.classList.remove('X');
+    }
+  }
+
+  // Choose the best available move
   const randomIndex = Math.floor(Math.random() * availableCells.length);
   const computerCell = availableCells[randomIndex];
 
@@ -53,7 +93,6 @@ function computerMove() {
 
   currentPlayer = 'X';
 }
-
 function checkWin(player) {
   const winningCombinations = [
     [0, 1, 2],

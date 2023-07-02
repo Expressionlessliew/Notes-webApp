@@ -2,15 +2,15 @@
     "questions": {
       "question1": {
         "name": "What is the capital of France",
-        "answer": "Paris"
+        "answer": "paris"
       },
       "question2": {
-        "name": "Question 2",
-        "answer": "blue"
+        "name": "Who is the world's best footballer in world?",
+        "answer": "messi"
       },
       "question3": {
-        "name": "Question 3",
-        "answer": "green"
+        "name": "Who created masks?",
+        "answer": "dr. wu lien-teh"
       }
     }
   }
