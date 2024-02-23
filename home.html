@@ -3,6 +3,7 @@
   <head>
     <title>Home</title>
     <link href="home.css" rel="stylesheet" />
+
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
@@ -126,28 +127,58 @@
           <button class="restart-btn">Restart</button>
         </div>
       </div>
-      
+
       <div class="new-widget">
-        <div class="quiz-container">
-          <h2>Quiz App</h2>
-          <div class="question">
-            <span class="question-name"></span>
-            <input type="text" class="answer-input" />
-          </div>
-          <button class="submit-btn">Submit</button>
-        </div>
-        <div class="scoreboard">
-          <h3>Score: <span class="score">0</span></h3>
-        </div>
+        <table class="calculator">
+          <tr>
+            <td colspan="3">
+              <input class="display-box" type="text" id="result" disabled />
+            </td>
+
+            <!-- clearScreen() function clears all the values -->
+            <td>
+              <input type="button" value="C" onclick="clearScreen()" id="btn" />
+            </td>
+          </tr>
+          <tr>
+            <!-- display() function displays the value of clicked button -->
+            <td><input type="button" value="1" onclick="display('1')" /></td>
+            <td><input type="button" value="2" onclick="display('2')" /></td>
+            <td><input type="button" value="3" onclick="display('3')" /></td>
+            <td><input type="button" value="/" onclick="display('/')" /></td>
+          </tr>
+          <tr>
+            <td><input type="button" value="4" onclick="display('4')" /></td>
+            <td><input type="button" value="5" onclick="display('5')" /></td>
+            <td><input type="button" value="6" onclick="display('6')" /></td>
+            <td><input type="button" value="-" onclick="display('-')" /></td>
+          </tr>
+          <tr>
+            <td><input type="button" value="7" onclick="display('7')" /></td>
+            <td><input type="button" value="8" onclick="display('8')" /></td>
+            <td><input type="button" value="9" onclick="display('9')" /></td>
+            <td><input type="button" value="+" onclick="display('+')" /></td>
+          </tr>
+          <tr>
+            <td><input type="button" value="." onclick="display('.')" /></td>
+            <td><input type="button" value="0" onclick="display('0')" /></td>
+
+            <!-- calculate() function evaluates the mathematical expression -->
+            <td>
+              <input type="button" value="=" onclick="calculate()" id="btn" />
+            </td>
+            <td><input type="button" value="*" onclick="display('*')" /></td>
+          </tr>
+        </table>
       </div>
-      
     </div>
+    
     <script src="todoList.js"></script>
     <script src="music.js"></script>
     <script src="home.js"></script>
     <script src="time.js"></script>
     <script src="calender.js"></script>
     <script src="ticTacToe.js"></script>
-    <script src="quiz.js"></script>
+    <script src="script11.js"></script>
   </body>
 </html>
